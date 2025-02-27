@@ -6,8 +6,6 @@ use App\Filament\Resources\CityResource\Pages;
 use App\Filament\Resources\CityResource\RelationManagers;
 use App\Models\City;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -29,19 +27,19 @@ class CityResource extends Resource
         return $form
             ->schema([
                 //
-                FileUpload::make('image')
+                Forms\Components\FileUpload::make('image')
                     ->image()
                     ->directory('cities')
                     ->required()
                     ->columnSpan(2),
-                TextInput::make('name')
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->debounce(500)
                     ->reactive()
                     ->afterStateUpdated(function ($state, callable $set){
                         $set('slug', Str::slug($state));
                     }),
-                TextInput::make('slug')
+                Forms\Components\TextInput::make('slug')
                     ->required(),
             ]);
     }
