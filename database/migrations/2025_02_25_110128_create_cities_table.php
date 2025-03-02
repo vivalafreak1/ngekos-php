@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('image');
             $table->string(column: 'name');
             $table->string(column: 'slug');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

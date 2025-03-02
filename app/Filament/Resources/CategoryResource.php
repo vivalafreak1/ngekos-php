@@ -31,7 +31,7 @@ class CategoryResource extends Resource
                 //
                 FileUpload::make('image')
                     ->image()
-                    ->directory('cities')
+                    ->directory('categories')
                     ->required()
                     ->columnSpan(2),
                 TextInput::make('name')
