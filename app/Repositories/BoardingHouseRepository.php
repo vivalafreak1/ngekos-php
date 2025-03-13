@@ -56,7 +56,7 @@ class BoardingHouseRepository implements BoardingHouseRepositoryInterface
 		// Implement the method logic here
         return BoardingHouse::whereHas('category', function (Builder $query) use ($slug) {
             $query->where('slug', $slug);
-        });
+        })->get();
 	}
 
 	public function getBoardingHouseBySlug($slug)
