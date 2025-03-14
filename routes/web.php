@@ -3,12 +3,15 @@
 use App\Http\Controllers\BoardingHouseController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get( '/', [HomeController::class, 'index'])->name('home');
 
-Route::get( '/category/{slug}', [CategoryController::class, 'show'])->name(name: 'category.show');
+Route::get( '/category/{slug}', action: [CategoryController::class, 'show'])->name(name: 'category.show');
+
+Route::get( '/city/{slug}', action: [CityController::class, 'show'])->name(name: 'city.show');
 
 Route::get( '/find-kos', [BoardingHouseController::class, 'find'])->name(name: 'find-kos');
 
