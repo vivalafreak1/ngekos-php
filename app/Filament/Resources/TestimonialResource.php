@@ -56,7 +56,6 @@ class TestimonialResource extends Resource
                 Tables\Columns\ImageColumn::make('photo'),
                 Tables\Columns\TextColumn::make('boardingHouse.name'),
                 Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('content'),
                 Tables\Columns\TextColumn::make('rating'),
             ])
             ->filters([
