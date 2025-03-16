@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 class BoardingHouseController extends Controller
 {
     //
-
     private CityRepositoryInterface $cityRepository;
     private CategoryRepositoryInterface $categoryRepository;
     private BoardingHouseRepositoryInterface $boardingHouseRepository;
@@ -32,7 +31,12 @@ class BoardingHouseController extends Controller
         return view('pages.boarding-house.show', compact('boardingHouse'));
     }
 
+    public function rooms($slug)
+    {
+        $boardingHouse = $this->boardingHouseRepository->getBoardingHouseBySlug($slug);
 
+        return view('pages.boarding-house.rooms', compact('boardingHouse'));
+    }
 
     public function find()
     {

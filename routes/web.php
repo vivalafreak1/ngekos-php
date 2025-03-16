@@ -15,6 +15,8 @@ Route::get( '/city/{slug}', action: [CityController::class, 'show'])->name(name:
 
 Route::get( '/kos/{slug}', [BoardingHouseController::class, 'show'])->name(name: 'kos.show');
 
+Route::get( '/kos/{slug}/rooms', [BoardingHouseController::class, 'rooms'])->name(name: 'kos.rooms');
+
 Route::get( '/find-kos', [BoardingHouseController::class, 'find'])->name(name: 'find-kos');
 
 Route::get('/find-results', [BoardingHouseController::class, 'findResults'])->name('find-kos.results');
