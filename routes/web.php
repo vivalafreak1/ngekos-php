@@ -14,8 +14,11 @@ Route::get( '/category/{slug}', action: [CategoryController::class, 'show'])->na
 Route::get( '/city/{slug}', action: [CityController::class, 'show'])->name(name: 'city.show');
 
 Route::get( '/kos/{slug}', [BoardingHouseController::class, 'show'])->name(name: 'kos.show');
-
 Route::get( '/kos/{slug}/rooms', [BoardingHouseController::class, 'rooms'])->name(name: 'kos.rooms');
+
+Route::get('/kos/booking/{slug}', [BookingController::class, 'booking'])->name('booking');
+Route::get('/kos/booking/{slug}/information', [BookingController::class, 'information'])->name('booking.information');
+Route::post('/kos/booking/{slug}/information/save', [BookingController::class, 'saveInformation'])->name('booking.information.save');
 
 Route::get( '/find-kos', [BoardingHouseController::class, 'find'])->name(name: 'find-kos');
 

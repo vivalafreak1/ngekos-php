@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
-    //
-    //
     private BoardingHouseRepositoryInterface $boardingHouseRepository;
     private CityRepositoryInterface $cityRepository;
 
