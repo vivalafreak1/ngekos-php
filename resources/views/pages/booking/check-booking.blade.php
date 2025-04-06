@@ -22,7 +22,7 @@
                             class="w-5 h-5 flex shrink-0" alt="icon">
                         <input type="text" name="code" id=""
                             class="appearance-none outline-none w-full font-semibold placeholder:text-ngekos-grey placeholder:font-normal"
-                            placeholder="Write your booking id" value={{ old('code') }}>
+                            placeholder="Write your booking id" value="{{ old('code') }}">
                     </label>
                     @error('code')
                         <p class="text-red-500 text-sm">{{ $message }}</p>
